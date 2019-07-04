@@ -136,6 +136,7 @@ typedef void (*aptMessageCb)(void* user, NS_APPID sender, void* msg, size_t msgs
 
 /// Initializes APT.
 Result aptInit(void);
+Result aptInitApplet(int level, int attr, int unknown);
 
 /// Exits APT.
 void aptExit(void);
@@ -226,6 +227,7 @@ void aptSetChainloader(u64 programID, u8 mediatype);
  * @param lockHandle Pointer to output the lock handle to.
  */
 Result APT_GetLockHandle(u16 flags, Handle* lockHandle);
+Result APT_GetLockHandleO(u16 flags, Handle* lockHandle, APT_AppletAttr* attr, APT_AppletPos* state);
 
 /**
  * @brief Initializes an application's registration with APT.
